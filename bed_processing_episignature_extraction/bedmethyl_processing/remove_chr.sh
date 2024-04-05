@@ -1,6 +1,6 @@
 #!/bin/bash
 
-input_folder="/staging/leuven/stg_00124/Benjamin/one_strand_epi/control_bedmethyl"
+input_folder=""
 
 for input_file in "$input_folder"/*.bed; do
     base_name=$(basename "$input_file" .bed)

@@ -79,8 +79,20 @@ Once your bedmethyl files are preprocessed, use the [`extract_episignatures.sh`]
 
    This script will extract episignature-specific loci from your bedmethyl files and save the results in the specified `output_folder`.
 
-### Step 3: Continue with Further Analysis
+### Step 3: SVM Training and Sample Classification
 
-Once the extraction is complete, the output files will be in the specified output directory, ready for further analysis with the NSBEpi pipeline.
+1. After extracting the episignatures, the user needs to run the Python notebook [`SVM_read_from_bed.ipynb`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/SVM_read_from_bed.ipynb).
+
+2. The notebook will first load Illumina-derived episignatures from the file [`no_strand_all_points_dict.pickle`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/data/no_strand_all_points_dict.pickle), which will be used for training the SVM classifier.
+
+3. The user must then set the path to the bedmethyl files with the extracted episignatures from Step 2. These will be processed further in the notebook.
+
+4. Before proceeding with SVM training and sample classification, users must set the list of sample names for their Nanopore data, ensuring the names are alphabetically ordered. Example:
+   ```python
+   # list of names of nanopore samples (in alphabetic order)
+   new_column_names = ['sample1', 'sample2', 'sample3', 'Control1', 'Control2', 'Control3']
+   ```
+
+5. Finish executing the notebook to perform SVM training and get the classification results for each sample.
 
 ---

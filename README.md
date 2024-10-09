@@ -14,9 +14,9 @@ To process external data through the NSBEpi pipeline, follow these steps. Ensure
 - **Bedtools**: Bedtools is required for the extraction of episignature loci.
 
 
-### Step 1: Preprocess BED-methyl Files
+### Step 1: Preprocess bedmethyl Files
 
-1. In the folder containing your BED-methyl files, first run the [`remove_extra_col.sh`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/bed_processing_episignature_extraction/bedmethyl_processing/remove_extra_col.sh) script to remove unnecessary columns. This will retain only the first 11 columns.
+1. In the folder containing your bedmethyl (NON STRAND SPECIFIC) files, first run the [`remove_extra_col.sh`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/bed_processing_episignature_extraction/bedmethyl_processing/remove_extra_col.sh) script to remove unnecessary columns. This will retain only the first 11 columns.
 
    Navigate to the folder containing the `remove_extra_col.sh` script:
    ```bash
@@ -28,9 +28,9 @@ To process external data through the NSBEpi pipeline, follow these steps. Ensure
    ./remove_extra_col.sh <path_to_bedmethyl_files>
    ```
 
-3. **(Optional)** If your BED-methyl files have chromosome annotations with the `chr` prefix (e.g., `chr1`, `chr2`, etc.), you need to run the [`remove_chr.sh`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/bed_processing_episignature_extraction/bedmethyl_processing/remove_chr.sh) script to remove this prefix.
+3. **(Optional)** If your bedmethyl files have chromosome annotations with the `chr` prefix (e.g., `chr1`, `chr2`, etc.), you need to run the [`remove_chr.sh`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/bed_processing_episignature_extraction/bedmethyl_processing/remove_chr.sh) script to remove this prefix.
 
-   In the `remove_chr.sh` script, set the `input_folder` path to the directory containing your BED-methyl files:
+   In the `remove_chr.sh` script, set the `input_folder` path to the directory containing your bedmethyl files:
    ```bash
    # path to folder with bedmethyl files
    input_folder="/path/to/your/bedmethyl/files"
@@ -46,11 +46,11 @@ To process external data through the NSBEpi pipeline, follow these steps. Ensure
    **Example**:
    If your input file is `sample1.bed`, the output file will be `sample1_noChr.bed`.
 
-5. After preprocessing the BED-methyl files, you are ready to proceed to the next step.
+5. After preprocessing the bedmethyl files, you are ready to proceed to the next step.
 
 ### Step 2: Extract Episignature-Specific Loci
 
-Once your BED-methyl files are preprocessed, use the [`extract_episignatures.sh`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/bed_processing_episignature_extraction/episignature_extraction/extract_episignatures.sh) script to extract episignature loci.
+Once your bedmethyl files are preprocessed, use the [`extract_episignatures.sh`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/bed_processing_episignature_extraction/episignature_extraction/extract_episignatures.sh) script to extract episignature loci.
 
 1. Navigate to the directory containing the `extract_episignatures.sh` script:
    ```bash
@@ -59,7 +59,7 @@ Once your BED-methyl files are preprocessed, use the [`extract_episignatures.sh`
 
 2. Modify the `extract_episignatures.sh` script to set your file paths:
    - **`group1_path`**: Set this to the path of the folder containing the episignature loci files from [hg38_episignature_cordinates](https://github.com/JorisVermeeschLab/NSBEpi/tree/main/hg38_episignature_cordinates).
-   - **`group2_path`**: Set this to the path of the folder containing your preprocessed BED-methyl files.
+   - **`group2_path`**: Set this to the path of the folder containing your preprocessed bedmethyl files.
    - **`output_folder`**: Set the name of the output folder where the results will be saved.
 
    Example:
@@ -77,7 +77,7 @@ Once your BED-methyl files are preprocessed, use the [`extract_episignatures.sh`
    ./extract_episignatures.sh
    ```
 
-   This script will extract episignature-specific loci from your BED-methyl files and save the results in the specified `output_folder`.
+   This script will extract episignature-specific loci from your bedmethyl files and save the results in the specified `output_folder`.
 
 ### Step 3: Continue with Further Analysis
 

@@ -11,18 +11,8 @@ To process external data through the NSBEpi pipeline, follow these steps. Ensure
 
 ### Prerequisites
 
-- **Modkit**: Ensure your BED-methyl files are generated using Modkit.
 - **Bedtools**: Bedtools is required for the extraction of episignature loci.
 
-  You can verify the installation by running:
-  ```bash
-  bedtools --version
-  ```
-
-  If not installed, you can install it via:
-  ```bash
-  sudo apt-get install bedtools
-  ```
 
 ### Step 1: Preprocess BED-methyl Files
 
@@ -38,7 +28,7 @@ To process external data through the NSBEpi pipeline, follow these steps. Ensure
    ./remove_extra_col.sh <path_to_bedmethyl_files>
    ```
 
-3. (Optional) If your BED-methyl files have chromosome annotations with the `chr` prefix (e.g., `chr1`, `chr2`, etc.), you need to run the [`remove_chr.sh`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/bed_processing_episignature_extraction/bedmethyl_processing/remove_chr.sh) script to remove this prefix.
+3. **(Optional)** If your BED-methyl files have chromosome annotations with the `chr` prefix (e.g., `chr1`, `chr2`, etc.), you need to run the [`remove_chr.sh`](https://github.com/JorisVermeeschLab/NSBEpi/blob/main/bed_processing_episignature_extraction/bedmethyl_processing/remove_chr.sh) script to remove this prefix.
 
    In the `remove_chr.sh` script, set the `input_folder` path to the directory containing your BED-methyl files:
    ```bash

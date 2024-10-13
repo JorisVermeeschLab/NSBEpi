@@ -1,5 +1,7 @@
 # NSBEpi <br />Nanopore sequencing-based episignature detection
 
+This repository provides instructions for extracting episignatures from Nanopore bedMethyl files and using SVMs for sample classification. It includes scripts for training SVMs on methylation data and classifying samples based on disease-specific episignatures associated with developmental disorders. The pipeline facilitates automated episignature detection, supporting both research and clinical diagnostics.
+
 ## Instructions for usage
 
 To test the SVM classifier with the provided [data/supplementary](data/methylation_data_illumina_nanopore_samples_controls.xlsx), run the [SVM_read_excel.ipynb](SVM_read_excel.ipynb) notebook with Jupyter Notebook, VS Code or Google Colab.

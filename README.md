@@ -45,7 +45,7 @@ To process external data through the NSBEpi pipeline, follow these steps. Ensure
    ./remove_chr.sh
    ```
 
-   The output files will have the same basename as the input files, but with `_noChr` added before the `.bed` extension.
+   The output files will have the same basename as the input files, but with `_noChr` added before the `.bed` extension. **Before proceding to the next step, move the new files into a separate directory**
 
    **Example**:
    If your input file is `sample1.bed`, the output file will be `sample1_noChr.bed`.

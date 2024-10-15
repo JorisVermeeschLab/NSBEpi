@@ -91,12 +91,6 @@ Once your bedmethyl files are preprocessed, use the [`extract_episignatures.sh`]
 
 3. The user must then set the path to the bedmethyl files with the extracted episignatures from Step 2. These will be processed further in the notebook.
 
-4. Before proceeding with SVM training and sample classification, users must set the list of sample names for their Nanopore data, ensuring the names are alphabetically ordered. Example:
-   ```python
-   # list of names of nanopore samples (in alphabetic order)
-   new_column_names = ['sample1', 'sample2', 'sample3', 'Control1', 'Control2', 'Control3']
-   ```
-
-5. Finish executing the notebook to perform SVM training and get the classification results for each sample.
+4. Finish executing the notebook to perform SVM training and get the classification results for each sample. 
 
 ---

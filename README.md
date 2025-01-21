@@ -2,6 +2,8 @@
 
 This repository provides instructions for extracting episignatures from Nanopore bedMethyl files and using SVMs for sample classification. It includes scripts for training SVMs on methylation data and classifying samples based on disease-specific episignatures associated with developmental disorders. The pipeline facilitates automated episignature detection, supporting both research and clinical diagnostics.
 
+## Publication: [Clinical evaluation of long-read sequencing-based episignature detection in developmental disorders](https://doi.org/10.1186/s13073-024-01419-z) 
+
 # Instructions for usage
 
 ## Running the Pipeline on Publication Data
